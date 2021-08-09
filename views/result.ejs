@@ -1,0 +1,45 @@
+<div id="modal"
+    class="main-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center  ease-in transition-opacity duration-1000 bg-black bg-opacity-70">
+    <section
+        class="border border-blue-500   bg-white w-4/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
+        <div class="modal-content py-4 text-left px-6">
+            <div class="flex justify-between items-center pb-3">
+                <div id="close" class="modal-close cursor-pointer z-50">
+                    <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 18 18">
+                        <path
+                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="my-5 mr-5 ml-5 flex justify-center">
+                <section class="w-full">
+                    <p class="text-md text-gray-600">sankariID: <%= sankari.sankariID %>
+                    </p>
+                    <p class="text-md text-gray-600">Vahvuus: <%= sankari.vahvuus %>
+                    </p>
+                    <p class="text-md text-gray-600">Nimi: <%= sankari.nimi %>
+                    </p>
+                    <p class="text-md text-gray-600">
+                        Superominaisuus: <%= sankari.superominaisuus %>
+                    </p>
+                    <p class="text-md text-gray-600">Varuste: <%= sankari.varuste %>
+                    </p>
+                    <p class="text-md text-gray-600">Vahvuus: <%= sankari.vahvuus %>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    const closeModal = document
+        .getElementById('close')
+        .addEventListener(
+            'click',
+            () => (document.getElementById('modal').style.display = 'none')
+        );
+</script>

@@ -1,0 +1,58 @@
+<section class=" flex items-start justify-evenly bg-gray-50 py-4 px-4 sm:px-6 lg:px-8">
+    <section className='max-w-md w-full space-y-8'>
+        <div class="mb-3">
+            <h1 class="text-4xl">Kaikki sankarit</h1>
+        </div>
+        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            sankariID
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            nimi
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            superominaisuus</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            varuste
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            vahvuus
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <% for(let sankari of result) { %>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <%= sankari.sankariID %>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <%= sankari.nimi %>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <%= sankari.superominaisuus %>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <%= sankari.varuste %>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <%= sankari.vahvuus %>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="/paivita/<%= sankari.sankariID %>"
+                                    class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="/poista/<%= sankari.sankariID %>"
+                                    class="text-indigo-600 hover:text-indigo-900">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    </main>

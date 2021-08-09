@@ -1,0 +1,72 @@
+[
+    {
+        "sankariID": 5,
+        "nimi": "Salama",
+        "superominaisuus": "parantaja",
+        "varuste": "pomppusaappaat",
+        "vahvuus": "*"
+    },
+    {
+        "sankariID": 4,
+        "nimi": "Ruostemies",
+        "superominaisuus": "muistityhjennys",
+        "varuste": "kypärä",
+        "vahvuus": "****"
+    },
+    {
+        "sankariID": 6,
+        "nimi": "DataMaster",
+        "superominaisuus": "pikavälähdys",
+        "varuste": "hakukone",
+        "vahvuus": "*****"
+    },
+    {
+        "sankariID": 1,
+        "nimi": "Lujakoipi",
+        "superominaisuus": "tuhokatse",
+        "varuste": "hanska",
+        "vahvuus": "**"
+    },
+    {
+        "sankariID": 3,
+        "nimi": "Rauhatar",
+        "superominaisuus": "naurettavan nopea",
+        "varuste": "viitta",
+        "vahvuus": "**"
+    },
+    {
+        "sankariID": 2,
+        "nimi": "SuperÄäliö",
+        "superominaisuus": "ajastaja",
+        "varuste": "superpanssari",
+        "vahvuus": "*"
+    },
+    {
+        "sankariID": 7,
+        "nimi": "SuperQL",
+        "superominaisuus": "kvanttikatse",
+        "varuste": "muistin voimistaja",
+        "vahvuus": "***"
+    },
+    {
+        "sankariID": 8,
+        "nimi": "diddd",
+        "superominaisuus": "mumbai",
+        "varuste": "supsa",
+        "vahvuus": "***"
+    },
+    {
+        "sankariID": 11,
+        "nimi": "MOB",
+        "superominaisuus": "Sairasloma",
+        "varuste": "Keppi",
+        "vahvuus": "**"
+    },
+    {
+        "sankariID": 124,
+        "nimi": "Mum",
+        "superominaisuus": "Mom",
+        "varuste": "Mother",
+        "vahvuus": "*******"
+    }
+]

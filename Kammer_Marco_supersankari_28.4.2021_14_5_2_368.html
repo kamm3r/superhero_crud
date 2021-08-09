@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>tehtävät</title>
+  <style>
+    
+ #valikko button {
+   width: 20em;
+ }
+
+ section > h2, main>h1 {
+   background-color: beige;
+ }
+
+ @media print {
+    #valikko,
+    #syote,
+    #haku,
+    #kaikki,
+    #virhe {
+      page-break-inside: avoid;
+      page-break-after: always;
+      padding: 10px;
+      height: 420px;
+      border: solid grey 1px;
+    }
+
+    #kaikki {
+      height: 1000px;
+    }
+
+    body {
+      font-size: 10pt;
+    }
+    section {
+      page-break-after: always;
+    }
+    section > div:last-of-type{
+      page-break-after:avoid;
+    }
+ }
+
+ @media screen {
+   #valikko,
+   #syote,
+   #haku,
+   #kaikki,
+   #virhe {
+     page-break-inside: avoid;
+     border: solid gray 1px;
+     padding: 1em;
+     margin: 10px;
+     height: 600px;
+   }
+
+   body {
+     font-size: 12pt;
+   }
+ }
+
+
+ ul.taulu {
+   font-family: monospace;
+   font-weight: bold;
+ }
+
+ input {
+   display: inline-block;
+   height: 20px;
+   border: black solid 2px;
+ }
+
+ label {
+   display: inline-block;
+   width: 150px;
+ }
+
+ .lihavointi {
+   font-weight: bold;
+ }
+
+ div {
+   padding: 10px;
+ }
+
+ .iso {
+   font-size: 16pt;
+ }
+
+ h2 .iso {
+   font-size: 24pt;
+ }
+
+ th,
+ td {
+   padding: 10px;
+   text-align: left;
+ }
+
+ .huom {
+   padding: 1em;
+   border: dashed 1px red;
+ }
+
+ .konsolivalikko>ol>li {
+   margin-left:1em;
+   font-family: monospace;
+ }
+
+ pre, .konsolivalikko>ol {
+   width: 70%;
+   padding: 1em;
+   background-color: lightgray;
+   font-weight: bold;
+ }
+
+ .avain {
+   color:blue;
+   font-weight: bold;
+ }
+
+ .arvo{
+   color:red;
+ }
+
+ .olioalku, .olioloppu, .taulukko{
+   font-weight: bold;
+ }
+ .olio{
+   padding-left:1em;
+   padding-top:0;
+   padding-bottom: 0;
+ }
+
+ .rivi{
+   padding:0;
+ }
+
+ .arvo.varchar::before{
+    content: '\0022';
+ }
+ .arvo.varchar::after {
+   content: '\0022';
+ }
+
+ .jsondata {
+   font-family: monospace;
+ }
+
+ table.csvdata {
+   border-collapse: collapse;
+   border: solid 1px black;
+ }
+
+ table.csvdata th {
+   background-color: lightgrey;
+   border-bottom: 1px solid black;
+ }
+
+ table.csvdata td,
+ table.csvdata th {
+   border-right: 1px solid black;
+   border-left: 1px solid black;
+ }
+
+  .xmldata .elementti,
+  .xmldata .elementtiloppu {
+    padding-left: 1em;
+  }
+
+  .xmldata .kentta {
+    padding-left: 2em;
+  }
+  </style>
+</head>
+  <body>
+    <header>Marco Kammer</header>
+    <main>
+      <h1> Tehtävät</h1>
+      <ol>
+      
+          <li>Luo projektille projektikansio</li> 
+      
+          <li>Luo tietoja varten json-tiedosto</li> 
+      
+          <li>Tee tietovarastokerros ohjelmallesi</li> 
+      
+          <li>Tee Palvelin (index.js)</li> 
+      
+          <li>Tee verkkosivut</li> 
+      
+          <li>Palauta valmis projekti</li> 
+      
+          <li>Liite A: Verkkosivujen mallit</li> 
+      
+      </ol>
+      
+      
+        <section class="projektinAlustusFI">
+          <h2>1 Luo projektille projektikansio</h2>
+        
+          <div>
+    Tee projektille projektikansio. Anna kansion nimeksi
+    <strong>Kammer_Marco_supersankari_projekti</strong>.
+  </div>
+  <div>
+    
+  </div>
+  
+   
+        </section>
+      
+        <section class="json">
+          <h2>2 Luo tietoja varten json-tiedosto</h2>
+        
+        <p>Tee tiedosto <strong>Kammer_Marco_supersankarit.json</strong></p>
+<div class="jsondata"><span class="taulukko">[</span><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">5</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">Salama</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">parantaja</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">pomppusaappaat</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">*</span> </div><span class="olioloppu">}</span>,</div><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">4</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">Ruostemies</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">muistityhjennys</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">kypärä</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">****</span> </div><span class="olioloppu">}</span>,</div><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">6</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">DataMaster</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">pikavälähdys</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">hakukone</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">*****</span> </div><span class="olioloppu">}</span>,</div><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">1</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">Lujakoipi</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">tuhokatse</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">hanska</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">**</span> </div><span class="olioloppu">}</span>,</div><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">3</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">Rauhatar</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">naurettavan nopea</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">viitta</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">**</span> </div><span class="olioloppu">}</span>,</div><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">2</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">SuperÄäliö</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">ajastaja</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">superpanssari</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">*</span> </div><span class="olioloppu">}</span>,</div><div class="olio"><span class="olioalku">{</span><div class="rivi">
+            <span class="avain">"sankariID"</span>:<span class="arvo integer">7</span>, </div><div class="rivi">
+            <span class="avain">"nimi"</span>:<span class="arvo varchar">SuperQL</span>, </div><div class="rivi">
+            <span class="avain">"superominaisuus"</span>:<span class="arvo varchar">kvanttikatse</span>, </div><div class="rivi">
+            <span class="avain">"varuste"</span>:<span class="arvo varchar">muistin voimistaja</span>, </div><div class="rivi">
+            <span class="avain">"vahvuus"</span>:<span class="arvo varchar">***</span> </div><span class="olioloppu">}</span></div><span class="taulukko">]</span></div>
+        </section>
+      
+        <section class="tietovarastokerrosFI">
+          <h2>3 Tee tietovarastokerros ohjelmallesi</h2>
+        
+            <div>Toteuta tunnilla olleen esimerkin mukainen tietovarastokerros
+    ja siihen tarvittavat metodit.
+  </div>
+  <h3>Tarvittavat toiminnot:</h3> 
+  <div>Tietovarastokerroksen tulisi sisältää seuraavat toiminnot:
+    <ul class="operaatiot">
+      
+      <li><strong class="iso">hae kaikki</strong></li>
+      
+      
+      <li><strong class="iso">hae yksi</strong></li>
+      
+      
+      
+      <li><strong class="iso">lisää</strong></li>
+      
+      
+      <li><strong class="iso">päivitä</strong></li>
+      
+      
+      <li><strong class="iso">poista</strong></li>
+      
+    </ul>
+  </div>
+  
+    
+      <div>
+        Tietovarasto luetaan dynaamisesti levyltä. 
+        
+        Tietojen muutokset tallentuvat levylle.
+        
+      </div>
+    
+  
+        </section>
+      
+        <section class="verkkopalvelinFI">
+          <h2>4 Tee Palvelin (index.js)</h2>
+        
+         <div>
+   Tee palvelin.
+   
+   Palvelin kuuntelee osoitteessa <strong>localhost:3000</strong>.
+  
+   Juurireitti (<strong class="iso">/</strong>) avaa valikon. 
+ </div>
+ 
+        </section>
+      
+        <section class="verkkosivutFI">
+          <h2>5 Tee verkkosivut</h2>
+        
+         <h3>Toteuta seuraavat verkkosivut:</h3>
+  <ul class="operaatiot">
+    
+    
+    <li><strong class="iso">hae kaikki</strong></li>
+    
+    
+    <li><strong class="iso">hae yksi</strong></li>
+    
+    
+    <li><strong class="iso">lisäys</strong></li>
+    
+    
+    <li><strong class="iso">muutos</strong></li>
+    
+    
+    <li><strong class="iso">poisto</strong></li>
+    
+    
+  </ul>
+ <p>
+  
+   Toteuta sivut liitteenä olevien verkkosivumallien mukaan. Suunnittele ja
+   toteuta loput tarvittavat sivut oman mielesi mukaan.
+   Suunnittele ja toteuta sivuille
+   yhtenäinen tyyli. 
+   
+ </p>
+        </section>
+      
+        <section class="palautusFI">
+          <h2>6 Palauta valmis projekti</h2>
+        
+          <div>
+    Palauta valmis projektikansio 
+    <strong>Kammer_Marco_supersankari_project</strong>
+    erikseen annettujen ohjeiden mukaan.
+    
+    
+  </div>
+  
+    
+
+<div>
+  Palauta projektikansiossa myös luomasi json-tiedosto
+  <strong>Kammer_Marco_supersankarit.json</strong>.
+</div>
+
+
+
+
+
+        </section>
+      
+        <section class="fullstack_liite">
+          <h2>7 Liite A: Verkkosivujen mallit</h2>
+        
+        <div id="nakymat">
+  <h3>Valikko</h3>
+  <div id="valikko">
+    <h1>Valitse</h1>
+  
+    <p><button type="button">Hae kaikki</button></p>
+  
+    <p><button type="button">Hae supersankari</button></p>
+    
+    <p><button type="button">Lisää supersankari</button></p>
+    
+    <p><button type="button">Muuta supersankarin tietoja</button></p>
+    
+    <p><button type="button">Poista supersankari</button></p>
+    
+ 
+  </div>
+  
+  <h3>Hae kaikki</h3>
+  <div id="kaikki">
+    <div id="haekaikki">
+  <h1>Kaikki tiedot</h1>
+  <table>
+    <thead>
+      <tr>
+        
+          <th>
+            sankariID
+          </th>
+          
+          <th>
+            nimi
+          </th>
+          
+          <th>
+            superominaisuus
+          </th>
+          
+          <th>
+            varuste
+          </th>
+          
+          <th>
+            vahvuus
+          </th>
+          
+      </tr>
+    </thead>
+    </tbody>
+    
+      <tr>
+        
+          <td>
+            5
+          </td>
+          
+          <td>
+            Salama
+          </td>
+          
+          <td>
+            parantaja
+          </td>
+          
+          <td>
+            pomppusaappaat
+          </td>
+          
+          <td>
+            *
+          </td>
+          
+      </tr>
+      
+      <tr>
+        
+          <td>
+            4
+          </td>
+          
+          <td>
+            Ruostemies
+          </td>
+          
+          <td>
+            muistityhjennys
+          </td>
+          
+          <td>
+            kypärä
+          </td>
+          
+          <td>
+            ****
+          </td>
+          
+      </tr>
+      
+      <tr>
+        
+          <td>
+            6
+          </td>
+          
+          <td>
+            DataMaster
+          </td>
+          
+          <td>
+            pikavälähdys
+          </td>
+          
+          <td>
+            hakukone
+          </td>
+          
+          <td>
+            *****
+          </td>
+          
+      </tr>
+      
+      <tr>
+        
+          <td>
+            1
+          </td>
+          
+          <td>
+            Lujakoipi
+          </td>
+          
+          <td>
+            tuhokatse
+          </td>
+          
+          <td>
+            hanska
+          </td>
+          
+          <td>
+            **
+          </td>
+          
+      </tr>
+      
+      <tr>
+        
+          <td>
+            3
+          </td>
+          
+          <td>
+            Rauhatar
+          </td>
+          
+          <td>
+            naurettavan nopea
+          </td>
+          
+          <td>
+            viitta
+          </td>
+          
+          <td>
+            **
+          </td>
+          
+      </tr>
+      
+      <tr>
+        
+          <td>
+            2
+          </td>
+          
+          <td>
+            SuperÄäliö
+          </td>
+          
+          <td>
+            ajastaja
+          </td>
+          
+          <td>
+            superpanssari
+          </td>
+          
+          <td>
+            *
+          </td>
+          
+      </tr>
+      
+      <tr>
+        
+          <td>
+            7
+          </td>
+          
+          <td>
+            SuperQL
+          </td>
+          
+          <td>
+            kvanttikatse
+          </td>
+          
+          <td>
+            muistin voimistaja
+          </td>
+          
+          <td>
+            ***
+          </td>
+          
+      </tr>
+      
+        </tbody>
+  </table>
+</div>
+  </div>
+  
+    <h3>Hae supersankari</h3>
+    <div id="haku">
+        <div id="haeyksi">
+    <h1>Haetut tiedot</h1>
+    
+    <p>sankariID: 5</p>
+    
+    <p>nimi: Salama</p>
+    
+    <p>superominaisuus: parantaja</p>
+    
+    <p>varuste: pomppusaappaat</p>
+    
+    <p>vahvuus: *</p>
+    
+  </div>
+    </div>
+  
+  <h3>Lisää supersankari</h3>
+  <div id="syote">
+    <div id="syottolomake">
+  <h1>Syötä uusi supersankari</h1>
+  <form id="lomake" action="#" method="post">
+    
+      <p>
+        <label>sankariID</label>
+        <input type="text" size="1">
+      </p>
+    
+      <p>
+        <label>nimi</label>
+        <input type="text" size="17">
+      </p>
+    
+      <p>
+        <label>superominaisuus</label>
+        <input type="text" size="27">
+      </p>
+    
+      <p>
+        <label>varuste</label>
+        <input type="text" size="20">
+      </p>
+    
+      <p>
+        <label>vahvuus</label>
+        <input type="text" size="8">
+      </p>
+    
+    <button type="submit">Lähetä</button>
+  </form>
+</div>
+  </div>
+
+ 
+ <h3>Virhesivu</h3>
+ <div id="virhe">
+       <h1>Virhe</h1>
+    <p>virheilmoitus tähän</p>
+ </div>
+ 
+</div>
+        </section>
+        
+    </main> 
+  </body>
+</html>
